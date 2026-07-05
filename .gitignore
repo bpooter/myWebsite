@@ -1,0 +1,52 @@
+# =========================
+# macOS
+# =========================
+.DS_Store
+
+# =========================
+# Python
+# =========================
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Virtual environments
+venv/
+.venv/
+env/
+
+# Environment variables
+.env
+.env.*
+
+# Python packaging
+*.egg-info/
+dist/
+build/
+
+# Test & coverage
+.pytest_cache/
+.coverage
+coverage/
+htmlcov/
+
+# =========================
+# PyCharm / JetBrains
+# =========================
+.idea/
+
+# =========================
+# VS Code (optional)
+# =========================
+.vscode/
+
+# =========================
+# Logs
+# =========================
+*.log
+
+# =========================
+# Misc
+# =========================
+*.swp
+*.tmp
