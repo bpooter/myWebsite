@@ -4,7 +4,7 @@
  * @param {string} imgId1 - The ID of the img section to show or hide
  * @param {string} imgId2 - The ID of the img section to show or hide
  */
-function toggleBio(bioId, imgId1, imgId2) {
+/*function toggleBio(bioId, imgId1, imgId2) {
     const bio = document.getElementById(bioId);
     const img1 = document.getElementById(imgId1)
     const img2 = document.getElementById(imgId2)
@@ -19,7 +19,16 @@ function toggleBio(bioId, imgId1, imgId2) {
         img2.style.display = "none";
     }
 }
+*/
 
+document.querySelectorAll(".toggle-btn").forEach(button =>{
+    button.addEventListener("click", function (){
+        const content = this.nextElementSibling;
+        content.classList.toggle("show");
+
+        this.textContent = content.classList.contains("show") ? "Hide Bio" : "Show Bio";
+    })
+})
 /**
  * Shows the specified section ('bios' or 'vision') and hides the other
  * @param {string} sectionId - The ID of the section to display

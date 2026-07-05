@@ -68,7 +68,7 @@ h2 {
     margin: 0 0 10px;
 }
 
-/* Initially hide bio details */
+/* Initially hide bio details
 .bio {
     display: none;
     margin-top: 10px;
@@ -78,6 +78,50 @@ h2 {
 
 .bioImg {
     display: none;
+}
+*/
+.selfie {
+    border-radius: 50%;
+    width: 50%;
+}
+.member-content {
+    display: none;
+    margin-top: 15px;
+}
+
+.member-content.show {
+    display: block;
+}
+
+.moodboard {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 15px;
+    margin-top: 20px;
+}
+
+.mood-item {
+    text-align: center;
+}
+
+.mood-item img{
+    width: 100%;
+    border-radius: 8px;
+    object-fit: cover;
+}
+
+.mood-item video {
+    width: 100%;
+    height: 300px;
+    grid-column: span 2;
+    object-fit: cover;
+    border-radius: 8px;
+}
+
+.mood-item p {
+    margin-top: 8px;
+    font-size: 0.9rem;
+    color: #555;
 }
 
 /* Button styling */

@@ -24,31 +24,82 @@
 <div id="bios" class="container">
     <!-- Each card represents an individual team member -->
     <div class="card">
+        <img class="selfie" src="img/brandon/brandon.jpg" alt="Photo of Brandon Potter">
         <h2>Brandon Potter</h2>
         <p>Frontend Developer</p>
-        <button onclick="toggleBio('bio1', 'img1', 'img2')">Show Bio</button>
-        <!-- add photo of yourself above the bio -->
-        <p id="bio1" class="bio">Hi, I'm Brandon Potter! I'm a Computer Science student with interests in indie game development, business intelligence, and science.
-        I enjoy building software, learning new technologies, and figuring out creative solutions to interesting problems.<br><br>In my free time, I like listening to Sean Carroll talk about physics and the universe.
-        While I definitely don't claim to understand all of the mathematics behind it, I appreciate how he makes complex ideas interesting and approachable.
-        I'm also a big fan of The Coding Train, whose creative programming projects are a great source of inspiration. Whether I'm experimenting with code or learning something new, I'm always looking for ways to expand my skills.</p>
-        <img class="bioImg" id="img1" src="img/TerrainGenerator.png" alt="Procedural terrain demo" width="300px">
-        <!-- add paragraph about terrain generator project -->
-        <img class="bioImg" id="img2" src="img/thecodingtrain.png" alt="The Coding Train Logo" width="150px">
-        <!-- add paragraph about the coding train -->
-        <img class="bioImg" id="img3" src="img/" alt="Sean Carroll" width="150px">
-        <!-- add paragraph and image of sean carroll -->
+        <button class="toggle-btn">Show Bio</button>
+
+        <div class="member-content">
+            <p class="bio">Hi, I'm Brandon Potter! I'm a Computer Science student with interests in indie game development, business intelligence, and science.
+            I enjoy building software, learning new technologies, and figuring out creative solutions to interesting problems.<br><br>In my free time, I like listening to Sean Carroll talk about physics and the universe.
+            While I definitely don't claim to understand all of the mathematics behind it, I appreciate how he makes complex ideas interesting and approachable.
+            I'm also a big fan of The Coding Train, whose creative programming projects are a great source of inspiration. Whether I'm experimenting with code or learning something new, I'm always looking for ways to expand my skills.
+            </p>
+            <div class="moodboard">
+                <div class="mood-item">
+                    <video autoplay muted loop playsinline> <source src="img/brandon/terrain_video.mp4" type="video/mp4">
+                    Your browser does not support the video tag.
+                    </video>
+                    <p>Procedural Terrain generator using Noise created in Processing</p>
+                </div>
+                <div class="mood-item">
+                    <img src="img/brandon/thecodingtrain.png" alt="">
+                </div>
+                <div class="mood-item">
+                    <img src="img/brandon/unreal-engine.png" alt="Unreal Engine Logo">
+                </div>
+                <div class="mood-item">
+                    <video autoplay muted loop playsinline> <source src="img/brandon/slash_trimmed.mp4" type="video/mp4">
+                    Your browser does not support the video tag.
+                    </video>
+                    <p>Project clip learning Unreal Engine 5</p>
+                </div>
+                <div class="mood-item">
+                    <img src="img/brandon/alarm_clock_front.jpg" alt="Front View of Alarm Clock">
+                    <p>Arduino Powered Alarm Clock front view</p>
+                </div>
+                <div class="mood-item">
+                    <img src="img/brandon/alarm_clock_back.jpg" alt="Back View of Alarm Clock">
+                    <p>Arduino Powered Alarm Clock back view</p>
+                </div>
+            </div>
+        </div>
 
     </div>
+
     <div class="card">
+        <img class="selfie" src="" alt=""> <!-- Image tag for a selfie if you want to add one -->
         <h2>Sam Banstola</h2>
-        <p>Backend Developer</p>
-        <button onclick="toggleBio('bio2')">Show Bio</button>
-        <p id="bio2" class="bio">Jane is a backend developer specializing in server-side logic and database management.</p>
+        <p>Frontend Developer</p>
+        <button class="toggle-btn">Show Bio</button>
+
+        <div class="member-content">
+            <p class="bio"><!-- Add your bio text here --> </p>
+            <div class="moodboard">
+                <div class="mood-item">
+
+                </div>
+                <div class="mood-item">
+
+                </div>
+                <div class="mood-item">
+
+                </div>
+                <div class="mood-item">
+
+                </div>
+                <div class="mood-item">
+
+                </div>
+                <div class="mood-item">
+
+                </div>
+            </div>
+        </div>
+
+
     </div>
-
 </div>
-
 <!-- Team vision/mission statement section (hidden by default) -->
 <div id="vision" class="container" style="display: none;">
     <h2>Our Mission Statement</h2>
