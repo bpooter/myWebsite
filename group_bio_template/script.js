@@ -21,30 +21,55 @@
 }
 */
 
-document.querySelectorAll(".toggle-btn").forEach(button =>{
-    button.addEventListener("click", function (){
-        const content = this.nextElementSibling;
-        content.classList.toggle("show");
+document.addEventListener('DOMContentLoaded', () => {
 
-        this.textContent = content.classList.contains("show") ? "Hide Bio" : "Show Bio";
-    })
-})
-/**
- * Shows the specified section ('bios' or 'vision') and hides the other
- * @param {string} sectionId - The ID of the section to display
- */
-function showSection(sectionId) {
-    const biosSection = document.getElementById("bios");
-    const visionSection = document.getElementById("vision");
+  // 1. Mobile Navbar Toggle
+  const menuToggle = document.querySelector('.menu-toggle');
+  const navLinks = document.querySelector('.nav-links');
 
-    // Display the bios section and hide the vision section
-    if (sectionId === "bios") {
-        biosSection.style.display = "flex";
-        visionSection.style.display = "none";
+  if (menuToggle && navLinks) {
+    menuToggle.addEventListener('click', () => {
+      navLinks.classList.toggle('active');
+    });
+  }
+
+  // 2. Contact Section Toggle (Updated to use CSS Classes)
+  const contactLink = document.getElementById('contact-link');
+  const contactSection = document.getElementById('contact-section');
+
+  if (contactLink && contactSection) {
+    contactLink.addEventListener('click', function(event) {
+      event.preventDefault(); // Strictly stops the anchor tag from jumping the page
+
+      // Toggle the .show class in your CSS
+      contactSection.classList.toggle('show');
+
+      // If it is now showing, smoothly scroll to it
+      if (contactSection.classList.contains('show')) {
+        contactSection.scrollIntoView({ behavior: 'smooth' });
+
+        // Closes mobile menu automatically after clicking contact
+        if (navLinks && navLinks.classList.contains('active')) {
+          navLinks.classList.remove('active');
+        }
+      }
+    });
+  }
+
+});
+
+function checkContactHash() {
+  if (window.location.hash === '#contact-section') {
+    const contactSection = document.getElementById('contact-section');
+    if (contactSection) {
+      contactSection.style.display = 'block'; // Or 'flex' / your custom display rule
+      contactSection.scrollIntoView({ behavior: 'smooth' });
     }
-    // Display the vision section and hide the bios section
-    else if (sectionId === "vision") {
-        biosSection.style.display = "none";
-        visionSection.style.display = "block";
-    }
+  }
 }
+
+// 1. Run immediately when the page loads or transfers
+window.addEventListener('DOMContentLoaded', checkContactHash);
+
+// 2. Run if the user clicks it while already standing on the index page
+window.addEventListener('hashchange', checkContactHash);

@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Projects</title>
+    <link rel="stylesheet" href="https://unpkg.com/nes.css@2.3.0/css/nes.min.css"> <!-- reference to NES.css -->
+    <link rel="stylesheet" href="styles.css"> <!-- Link to external CSS file -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=VT323&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <header>
+        <!-- Navigation menu to switch between sections -->
+        <nav class="navbar nes-container is-rounded">
+            <div class="nav-container">
+                <a href="#"><img class="logo is-small" src="img/brandon/black_plane_logo.png" alt="Logo"></a>
+                <button class="menu-toggle" aria-label="Toggle Navigation">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+
+                <ul class="nav-links">
+                    <li><a role="button" href="index.html" class="nav-link nes-btn is-primary" onclick="showSection('')">About</a></li>
+                    <li><a role="button" href="#" class="nav-link nes-btn is-primary active" onclick="showSection('')">Projects</a></li>
+                    <li><a role="button" href="#" class="nav-link nes-btn is-primary" onclick="showSection('')">Resume</a></li>
+                    <li><a role="button" href="index.html#contact-section" class="nav-link nes-btn is-primary" onclick="showSection('')">Contact</a></li>
+                </ul>
+
+            </div>
+        </nav>
+    </header>
+
+    <div class="container">
+        <!-- Each card represents a project -->
+        <div class="card nes-container with-title is-centered is-rounded">
+            <div class="member-content">
+                <h3 class="bio title">Projects:
+                </h3>
+                <p class="bio">Click on the project to see detailed information
+                </p>
+
+                <div class="moodboard">
+                    <div class="mood-item">
+                        <a href="terrain-generator.html"> <!-- this will link to the project description in depth page -->
+                            <video autoplay muted loop playsinline> <source src="img/brandon/terrain_video.mp4" type="video/mp4">
+                                Your browser does not support the video tag.
+                            </video>
+                            <p>Procedural Terrain generator using Noise created in Processing</p>
+                        </a>
+                    </div>
+                    <div class="mood-item">
+                        <a href="alarm-clock.html">
+                            <img src="img/brandon/alarm_clock_front.jpg" alt="Front View of Alarm Clock">
+                        </a>
+                        <p>Arduino Powered Alarm Clock</p>
+                    </div>
+                    <div class="mood-item">
+                        <a href="discord-bot.html">
+                            <img src="img/discord-bot/discord-logo.png" alt="Discord logo">
+                        </a>
+                        <p>Llama3.1 powered Discord bot</p>
+                    </div>
+                    <div class="mood-item">
+                        <video autoplay muted loop playsinline> <source src="img/brandon/slash_trimmed.mp4" type="video/mp4">
+                            Your browser does not support the video tag.
+                        </video>
+                        <p>Project clip learning Unreal Engine 5</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+
+</body>
+</html>

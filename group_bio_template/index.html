@@ -3,108 +3,77 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Team Bio</title>
+    <title>Brandon Potter</title>
+    <link rel="stylesheet" href="https://unpkg.com/nes.css@2.3.0/css/nes.min.css"> <!-- reference to NES.css -->
     <link rel="stylesheet" href="styles.css"> <!-- Link to external CSS file -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=VT323&display=swap" rel="stylesheet">
 </head>
 <body>
 
 <header>
-    <h1>Meet Our Team</h1>
-    <!-- Example team logo -->
-    <img src="img/team-logo.png" alt="Team Logo" class="team-logo">
-
     <!-- Navigation menu to switch between sections -->
-    <nav>
-        <button onclick="showSection('bios')">Team Bios</button>
-        <button onclick="showSection('vision')">Team Vision</button>
+    <nav class="navbar nes-container is-rounded">
+        <div class="nav-container">
+            <a href="#"><img class="logo is-small" src="img/brandon/black_plane_logo.png" alt="Logo"></a>
+            <button class="menu-toggle" aria-label="Toggle Navigation">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+
+            <ul class="nav-links">
+            <li><a role="button" href="#" class="nav-link nes-btn is-primary active" onclick="showSection('bios')">About</a></li>
+            <li><a role="button" href="projects.html" class="nav-link nes-btn is-primary">Projects</a></li>
+            <li><a role="button" href="#" class="nav-link nes-btn is-primary" onclick="showSection('vision')">Resume</a></li>
+            <li><a role="button" href="#" id="contact-link" class="nav-link nes-btn is-primary" onclick="showSection('contact-link')">Contact</a></li>
+
+            </ul>
+
+        </div>
     </nav>
+    <!---<h1>Meet Our Team</h1>-->
+    <!-- Example team logo -->
+    <div class="selfie-wrapper">
+        <img class="selfie" src="img/brandon/brandon.jpg" alt="Photo of Brandon">
+    </div>
+
+
 </header>
 
 <!-- Team bios section (default section) -->
-<div id="bios" class="container">
+<div class="container">
     <!-- Each card represents an individual team member -->
-    <div class="card">
-        <img class="selfie" src="img/brandon/brandon.jpg" alt="Photo of Brandon Potter">
-        <h2>Brandon Potter</h2>
-        <p>Frontend Developer</p>
-        <button class="toggle-btn">Show Bio</button>
-
-        <div class="member-content">
-            <p class="bio">Hi, I'm Brandon Potter! I'm a Computer Science student with interests in indie game development, business intelligence, and science.
-            I enjoy building software, learning new technologies, and figuring out creative solutions to interesting problems.<br><br>In my free time, I like listening to Sean Carroll talk about physics and the universe.
-            While I definitely don't claim to understand all of the mathematics behind it, I appreciate how he makes complex ideas interesting and approachable.
-            I'm also a big fan of The Coding Train, whose creative programming projects are a great source of inspiration. Whether I'm experimenting with code or learning something new, I'm always looking for ways to expand my skills.
+    <div class="card nes-container with-title is-centered is-rounded">
+        <div class="member-content"> <!-- Fix this inline styling to something in css -->
+            <h3 class="bio title">Imagine what you'll know tomorrow.
+            </h3>
+            <p class="bio"><strong>My name is Brandon Potter</strong>
             </p>
-            <div class="moodboard">
-                <div class="mood-item">
-                    <video autoplay muted loop playsinline> <source src="img/brandon/terrain_video.mp4" type="video/mp4">
-                    Your browser does not support the video tag.
-                    </video>
-                    <p>Procedural Terrain generator using Noise created in Processing</p>
-                </div>
-                <div class="mood-item">
-                    <img src="img/brandon/thecodingtrain.png" alt="">
-                </div>
-                <div class="mood-item">
-                    <img src="img/brandon/unreal-engine.png" alt="Unreal Engine Logo">
-                </div>
-                <div class="mood-item">
-                    <video autoplay muted loop playsinline> <source src="img/brandon/slash_trimmed.mp4" type="video/mp4">
-                    Your browser does not support the video tag.
-                    </video>
-                    <p>Project clip learning Unreal Engine 5</p>
-                </div>
-                <div class="mood-item">
-                    <img src="img/brandon/alarm_clock_front.jpg" alt="Front View of Alarm Clock">
-                    <p>Arduino Powered Alarm Clock front view</p>
-                </div>
-                <div class="mood-item">
-                    <img src="img/brandon/alarm_clock_back.jpg" alt="Back View of Alarm Clock">
-                    <p>Arduino Powered Alarm Clock back view</p>
-                </div>
+
+            <div class="member-content">
+                <p class="bio">
+                I've always enjoyed learning and would describe myself as a "confusion enthusiast." To me, confusion isn't something to avoid, but rather it is usually the first step toward understanding something new.
+                <br><br>
+                In my free time, I enjoy tinkering with a variety of projects. Whether I'm outlining ideas for my book, brainstorming mechanics for an indie game, or getting my hands dirty working on a car, I'm happiest when I'm learning, creating, or solving problems.
+                </p>
+            </div>
+
+
+
+                <section id="contact-section">
+                    <h3 class="bio title">Get in Touch</h3>
+                    <i class="nes-icon github is-large"></i>
+                    <i class="nes-icon gmail is-large"></i>
+                    <i class="nes-icon linkedin is-large"></i>
+
+                </section>
             </div>
         </div>
 
     </div>
 
-    <div class="card">
-        <img class="selfie" src="" alt=""> <!-- Image tag for a selfie if you want to add one -->
-        <h2>Sam Banstola</h2>
-        <p>Frontend Developer</p>
-        <button class="toggle-btn">Show Bio</button>
-
-        <div class="member-content">
-            <p class="bio"><!-- Add your bio text here --> </p>
-            <div class="moodboard">
-                <div class="mood-item">
-
-                </div>
-                <div class="mood-item">
-
-                </div>
-                <div class="mood-item">
-
-                </div>
-                <div class="mood-item">
-
-                </div>
-                <div class="mood-item">
-
-                </div>
-                <div class="mood-item">
-
-                </div>
-            </div>
-        </div>
-
-
-    </div>
-</div>
-<!-- Team vision/mission statement section (hidden by default) -->
-<div id="vision" class="container" style="display: none;">
-    <h2>Our Mission Statement</h2>
-    <p>We strive to create a collaborative, inclusive, and innovative environment where team members feel empowered to push boundaries and achieve excellence in their craft. Our mission is to deliver high-quality solutions that meet and exceed our clients' expectations.</p>
-</div>
 
 <script src="script.js"></script> <!-- Link to external JavaScript file -->
 

@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Projects</title>
+    <link rel="stylesheet" href="https://unpkg.com/nes.css@2.3.0/css/nes.min.css"> <!-- reference to NES.css -->
+    <link rel="stylesheet" href="styles.css"> <!-- Link to external CSS file -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=VT323&display=swap" rel="stylesheet">
+</head>
+<body>
+<header>
+    <!-- Navigation menu to switch between sections -->
+    <nav class="navbar nes-container is-rounded">
+        <div class="nav-container">
+            <a href="#"><img class="logo is-small" src="img/brandon/black_plane_logo.png" alt="Logo"></a>
+            <button class="menu-toggle" aria-label="Toggle Navigation">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+
+            <ul class="nav-links">
+                <li><a role="button" href="index.html" class="nav-link nes-btn is-primary" onclick="showSection('')">About</a></li>
+                <li><a role="button" href="projects.html" class="nav-link nes-btn is-primary" onclick="showSection('')">Projects</a></li>
+                <li><a role="button" href="#" class="nav-link nes-btn is-primary" onclick="showSection('')">Resume</a></li>
+                <li><a role="button" href="index.html#contact-section" class="nav-link nes-btn is-primary" onclick="showSection('')">Contact</a></li>
+            </ul>
+
+        </div>
+    </nav>
+</header>
+
+    <div class="container">
+        <!-- Each card represents a project -->
+        <div class="card nes-container with-title is-centered is-rounded project-intro">
+            <div class="project-board-title">
+                <a role="button" href="projects.html" class="nes-btn is-warning">Back to Projects</a>
+                <h3>Llama3.1 Powered Discord Chatbot:
+                </h3>
+                <p>Exploring locally hosting LLM's and API integrations.
+                </p>
+
+                <div class="project-board">
+                    <div class="project-item">
+                        <img src="img/discord-bot/discord-logo.png" alt="Discord Logo">
+                        <img src="" alt="Ollama Logo">
+                        <p><strong>Technologies used in this Project:</strong></p>
+                        <p>Node</p>
+                        <p>Discord.js</p>
+                        <p>Llama3.1</p>
+                        <p>Local Hosting</p>
+                    </div>
+                    <div class="project-item">
+                        <h3>Creating the Discord Bot</h3>
+                        <img src="img/alarm-clock/alarm-clock-tinker-circuit.png" alt="Circuit diagram in TinkerCad">
+                        <p>TinkerCad allowed me to prototype the circuit and test the Arduino code before assembling the physical hardware.</p>
+                        <p>The primary structural components of the circuit are the Arduino microcontroller, a breadboard for mounting and connecting components, and an LCD screen. These components must be arranged so they fit within the alarm clock housing.</p>
+                        <p>The user controls consist of two potentiometers (rotary knobs): one adjusts the alarm volume, while the other controls the display brightness.</p>
+                        <p>Four push buttons provide the clock's input controls. Two buttons adjust the hour and minute values, one cycles between the clock's operating modes (such as setting the time or alarm), and the fourth button silences the alarm while it is sounding.</p>
+                        <p>Additional components include the LCD screen for displaying the current time and alarm status, a speaker for the alarm, a toggle switch to enable or disable the alarm, a photoresistor (light sensor) to detect ambient light levels, an LED that indicates when the alarm is enabled, and two LEDs that function as a night light when the surrounding environment becomes dark.</p>
+                    </div>
+                    <div class="project-item">
+                        <h3>Timekeeping Code</h3>
+                        <img src="img/alarm-clock/alarm-clock-update-ms.png" alt="Code updating time on clock using milliseconds">
+                        <p>The clock's timekeeping system uses the <code>millis()</code> function to measure elapsed time without relying on delays.</p>
+                        <p>When 1,000 milliseconds have passed since the previous update, the program increments the seconds counter.</p>
+                        <p>Once the seconds reach 60, they reset to 0 and increment the minutes. Likewise, when the minutes reach 60, they reset and increment the hour.</p>
+                        <p>Internally time is stored using the 24-hour format. Before displaying the time on the LCD, the hour value is converted to a 12-hour format using the modulus operator, and the appropriate AM or PM indicator is displayed.</p>
+                    </div>
+                    <div class="project-item">
+                        <h3>User Input</h3>
+
+                        <img src="img/alarm-clock/alarm-clock-state.png" alt="Code getting clock state">
+                        <p>The clock uses a simple state machine to know which mode it is currently in.</p>
+                        <p>Depending on the state helper functions for setting time or setting the alarm will be called.</p>
+                        <p>If the clock is in neither of these states, time is updated and shown.</p>
+
+                        <img src="img/alarm-clock/alarm-clock-handle-time.png" alt="Code showing logic for user input to update time/alarm">
+                        <p>The handle time function receives a reference to the current hours and minutes.</p>
+                        <p>When the user pushes either the hour or minute button, the value is incremented by 1.</p>
+                        <p>A short delay is added for convenience of setting the time accurately.</p>
+                    </div>
+                    <div class="project-item">
+                        <h3>Alarm System</h3>
+                        <img src="img/alarm-clock/alarm-clock-alarm-logic.png" alt="Code for alarm logic in clock">
+                        <p>The alarm logic is evaluated continuously within the program's main <code>loop()</code> function.</p>
+                        <p>Each iteration checks whether the alarm is armed and compares the current time to the stored alarm time. When these conditions are met, the alarm is activated and the buzzer begins sounding.</p>
+                        <p>The <code>alarmFired</code> flag prevents the alarm from repeatedly triggering while the current time remains within the same minute.</p>
+                        <p>Once the clock advances to the next minute, the flag is reset allowing the alarm to activate again on the following day.</p>
+                    </div>
+                    <div class="project-item">
+                        <h3>Day and Night</h3>
+                        <img src="img/alarm-clock/alarm-clock-nightlight.png" alt="Code showing logic for turning on LED's using photoresistor">
+                        <p>The night-light feature uses a photoresistor to measure the surrounding light level. The Arduino continuously reads the sensor's analog value to determine the brightness of the environment.</p>
+                        <p>The sensor reading is mapped to a PWM output value, causing the LEDs to become brighter as the room becomes darker and dimmer as more ambient light is detected.</p>
+                        <p>The mapped value is constrained to the valid PWM range (0–255) before being written to the LEDs, ensuring consistent brightness control.</p>
+                    </div>
+                    <div class="project-item">
+                        <h3>Physical Design</h3>
+                        <img src="img/alarm-clock/alarm-clock-box.png" alt="Design of alarm clock housing">
+                        <p>The alarm clock housing was designed using an online box generator to create laser-cut panels that could be assembled into a prototype enclosure.</p>
+                        <p>Cardboard was chosen as the prototype material because it is inexpensive, easy to cut, and simple to modify, allowing the enclosure dimensions to be adjusted as the internal electronics were arranged.</p>
+                        <img src="img/alarm-clock/alarm-clock-ball-model.png" alt="Image of a 3D rendered Poké Ball design">
+                        <p>A custom Poké Ball-inspired enclosure was designed in Autodesk Fusion 360 to house the night-light assembly. The model was then 3D printed and mounted to the top of the alarm clock housing.</p>
+                        <p>Two white LEDs are installed inside the enclosure, creating a soft glow that is automatically controlled by the photoresistor based on the surrounding ambient light.</p>
+                        <img src="img/alarm-clock/alarm-clock-circuit.png" alt="Image showing physical circuit for alarm clock">
+                        <p>The housing required the circuit to be broken into parts along two breadboards.</p>
+                        <img src="img/brandon/alarm_clock_back.jpg" alt="Image showing circuit inside alarm clock housing">
+                        <p>To make the controls accessible through the enclosure, bamboo skewers were attached to the breadboard push buttons, creating simple button extensions that transferred each press from the housing to the underlying switches.</p>
+                        <p>Hot glue was used to securely mount the photoresistor and alarm switch to the housing, ensuring they remained correctly positioned while allowing the prototype to withstand regular interaction.</p>
+                    </div>
+                    <div class="project-item">
+                        <h3>Finished Clock:</h3>
+                        <img src="img/alarm-clock/alarm-clock-close-off.png" alt="Image showing front of housing of alarm clock project">
+                        <img src="img/brandon/alarm_clock_back.jpg" alt="Image showing back of completed alarm clock project">
+                        <video autoplay muted loop playsinline> <source src="img/alarm-clock/Alarm%20clock.mp4" type="video/mp4">
+                            Your browser does not support the video tag.
+                        </video>
+                        <p>The finished clock prototype was painted in the style of a Pokémon Center with help from my wife and son.</p>
+                    </div>
+                    <div class="project-item">
+                        <h3>Future Improvements:</h3>
+                        <p>In the future I hope to revisit this project and provide a proper housing for the alarm clock using a 3D printed housing.</p>
+                        <p>I also would like to add an amplifier module to make the alarm system louder.</p>
+                    </div>
+                    <div class="project-item">
+                        <h3>Lessons Learned:</h3>
+                        <p>This project reinforced the close relationship between hardware and software, demonstrating how the physical design of a device can directly influence the structure of the code.</p>
+                        <p>Building a working prototype required iterative testing and debugging. Small hardware issues, such as button placement, sensor positioning, and cable routing, often required adjustments to both the enclosure and the software.</p>
+                        <p>Most importantly, this project showed me that successful systems require balancing functionality, usability, and physical design rather than focusing on software alone.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+
+</body>
+</html>

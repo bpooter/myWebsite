@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Projects</title>
+    <link rel="stylesheet" href="https://unpkg.com/nes.css@2.3.0/css/nes.min.css"> <!-- reference to NES.css -->
+    <link rel="stylesheet" href="styles.css"> <!-- Link to external CSS file -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=VT323&display=swap" rel="stylesheet">
+</head>
+<body>
+<header>
+    <!-- Navigation menu to switch between sections -->
+    <nav class="navbar nes-container is-rounded">
+        <div class="nav-container">
+            <a href="#"><img class="logo is-small" src="img/brandon/black_plane_logo.png" alt="Logo"></a>
+            <button class="menu-toggle" aria-label="Toggle Navigation">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+
+            <ul class="nav-links">
+                <li><a role="button" href="index.html" class="nav-link nes-btn is-primary" onclick="showSection('')">About</a></li>
+                <li><a role="button" href="projects.html" class="nav-link nes-btn is-primary" onclick="showSection('')">Projects</a></li>
+                <li><a role="button" href="#" class="nav-link nes-btn is-primary" onclick="showSection('')">Resume</a></li>
+                <li><a role="button" href="index.html#contact-section" class="nav-link nes-btn is-primary" onclick="showSection('')">Contact</a></li>
+            </ul>
+
+        </div>
+    </nav>
+</header>
+
+    <div class="container">
+        <!-- Each card represents a project -->
+        <div class="card nes-container with-title is-centered is-rounded project-intro">
+            <div class="project-board-title">
+                <a role="button" href="projects.html" class="nes-btn is-warning">Back to Projects</a>
+                <h3>Procedural Terrain Generator:
+                </h3>
+                <p>Exploring procedural generation using Perlin Noise to create a synthwave inspired horizon.
+                </p>
+
+                <div class="project-board">
+                    <div class="project-item">
+                            <video autoplay muted loop playsinline> <source src="img/brandon/terrain_video.mp4" type="video/mp4">
+                                Your browser does not support the video tag.
+                            </video>
+                            <p>Video of Terrain Generator running</p>
+                    </div>
+                    <div class="project-item">
+                        <h3>Setting up the Scene</h3>
+                        <img src="img/terrain-generator/terrain_setup.png" alt="Code setting scene up in terrain generator">
+                        <p>Initialize the scene by creating a 3D window in processing.</p>
+                        <p>Scale represents the spacing between vertices and can be increased or decreased.</p>
+                        <p>Store the vertices in a variable of terrain, all heights of the vertices are 0</p>
+                    </div>
+                    <div class="project-item">
+                        <h3>Move the Scene</h3>
+                        <img src="img/terrain-generator/terrain-fly.png" alt="Code setting scene up in terrain generator">
+                        <p>Draw method runs continuously, using an offset variable give the illusion of movement to scroll through noise field.</p>
+                    </div>
+                    <div class="project-item">
+                        <h3>Generate Terrain Heights</h3>
+                        <img src="img/terrain-generator/terrain-domain-warping.png" alt="Code setting domain warping up in terrain generator">
+                        <p>Loop through vertices to sample noise for height values, in this example we are domain warping.</p>
+                        <p>Domain warping is accomplished by sampling noise and then resampling noise, this ensures that terrain varies and is more realistic and interesting.</p>
+                    </div>
+                    <div class="project-item">
+                        <h3>Pave the Road</h3>
+                        <img src="img/terrain-generator/terrain-road-code.png" alt="Code creating a flat spot simulating a road">
+                        <p>Still looping through all vertices, using absolute value subtract the current X value from the center X value to find the distance from center.</p>
+                        <p>halfRoadCols is a variable that is half of the columns needed for the width of the road.</p>
+                        <p>If the distance from the center is less than the half road columns variable, scale it to create a smooth terrain.</p>
+                    </div>
+                    <div class="project-item">
+                        <h3>Day and Night</h3>
+                        <img src="img/terrain-generator/terrain-moon.png" alt="Code showing sinusoidal function to move a celestial body and scale">
+                        <p>sphereYOffset uses sine function multiplied by amplitude to generate values</p>
+                        <p>moonY uses the base value of the moon added to the sphereYOffset to apply sinusoidal movement to the moon.</p>
+                        <p>To simulate a natural horizon, scaleFactor uses the position of the moon and makes it largest at the horizon and smaller as it rises in the sky. </p>
+                    </div>
+                    <div class="project-item">
+                        <h3>Future Improvements:</h3>
+                        <p>In the future, I'd like to revisit this project to add a dynamic sky gradient that changes with the moon's height, creating a more immersive atmosphere. I also plan to procedurally generate a star field to make the scene feel more alive.</p>
+                    </div>
+                    <div class="project-item">
+                        <h3>Lessons Learned:</h3>
+                        <p>Domain warping can greatly improve procedural terrain by creating smoother, more believable transitions. I enjoyed learning how complementary techniques can make procedurally generated environments feel less "manufactured" and more like naturally formed landscapes.</p>
+                        <p>Subtle perspective tricks, such as scaling the moon near the horizon and carefully positioning the camera, can create a much more immersive scene. This project taught me that visual polish often comes from thoughtful details rather than large technical changes.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+
+</body>
+</html>
